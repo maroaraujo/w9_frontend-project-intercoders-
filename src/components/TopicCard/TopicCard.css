@@ -1,0 +1,10 @@
+.card--organizer{
+display: flex;
+flex-direction: row;
+
+}
+
+.img{
+height: 60px;
+width: 60px;
+}
