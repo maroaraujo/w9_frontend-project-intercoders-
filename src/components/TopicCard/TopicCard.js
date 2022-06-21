@@ -26,7 +26,7 @@ return(
     <div className='topic--categories'>
     <img className="img" src={item.src}/>
     <h3>{item.topicName}</h3>
-    <StudentInput/>
+    <StudentInput value = {index} />
     <Volunteer/>  
     </div>
     </div>

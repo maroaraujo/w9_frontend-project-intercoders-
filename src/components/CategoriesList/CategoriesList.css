@@ -6,7 +6,7 @@ margin: 15px;
 padding: 10px;
 border-radius: 8px;
 text-align: center;
-
+justify-content: space-evenly;
 }
 .inputs{
     display:flex;
@@ -18,8 +18,8 @@ flex-direction: column;
 vertical-align: top;
 }
 .topic--categories{
+justify-content: space-between;
 padding: 5px;
-align-self: center;
 }
 
 .input-student{

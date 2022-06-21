@@ -1,7 +1,8 @@
 import React from "react";
 import {useState} from "react"
 
-function StudentInput() {
+function StudentInput(props) {
+
  const [text,setText]=useState('');
  const [students, setStudent] = useState([]);
 
@@ -12,9 +13,8 @@ function StudentInput() {
 
     function handleClick(e){
     e.preventDefault()
-    setStudent([...students,{studentName:text, id:students.length+1}])
+    setStudent([...students,{studentName:text, id:students.length+1,key:props.value}])
     }
-    // console.log(students)
 
 
 return(
