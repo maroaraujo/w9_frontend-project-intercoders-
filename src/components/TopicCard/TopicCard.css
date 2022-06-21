@@ -6,10 +6,14 @@ align-items: center;
 
 }
 .card--organizer>*{
-flex: 1 1 400px;
+flex: 1 1 450px;
 
 }
-
+.topic--categories{
+margin: 40px;
+background-color:#3A3A3C  ;
+border-radius: 10px;
+}
 .img{
 height: 60px;
 width: 60px;
