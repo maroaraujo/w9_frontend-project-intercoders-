@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Categories.css";
-import CategoriesList from '../CategoriesList/CateroriesList';
+import CategoriesList from '../CategoriesList/Categories';
 
 function Categories () {
     return (<div className = "Categories--container">

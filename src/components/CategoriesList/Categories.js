@@ -16,14 +16,14 @@ function CategoriesList () {
 
     function handleChange (e) {
     setText(e.target.value)
-    console.log(text)
+    // console.log(text)
     }
 
     function handleClick(e){
     e.preventDefault()
     setStudent([...students,{studentName:text, id:students.length+1}])
     }
-    console.log(students)
+    // console.log(students)
 
 
     return (
