@@ -1,8 +1,6 @@
 .CategoriesList--container{
 display: flex;
 flex-direction: row;
-margin: 15px;
-padding: 10px;
 border-radius: 8px;
 text-align: center;
 justify-content: space-evenly;
