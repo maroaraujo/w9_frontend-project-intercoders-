@@ -28,7 +28,7 @@ function CategoriesList () {
     <div className='input-student'>
         <input onChange={handleChange} type="text" placeholder="Student's name"></input>
     <button type= "submit" onClick={handleClick}>+</button>
-     {students.map(function(students){return <li key={students.id}>{students.studentName} <button onClick={deleteStudent}> X</button></li> })}
+     {students.map(function(students){return <li key={students.id}>{students.studentName} <button key={students.id} className='deleteButton'> X</button></li> })}
     </div>
     <div className='volunteer'>
     <input type="text" placeholder="Volunteer's name"></input>

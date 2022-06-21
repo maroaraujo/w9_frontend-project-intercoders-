@@ -37,3 +37,9 @@ align-self: center;
     padding-top:11px;
 }
 
+.deleteButton{
+background-color: #3A3A3C;
+color: antiquewhite;
+border-color: grey;
+border-radius: 15px;
+}
