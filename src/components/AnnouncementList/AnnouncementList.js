@@ -23,7 +23,7 @@ return(
             <div className="Container-card">
             { topic.map(function (item){
              return(
-             <div className="Announcement-card">
+             <div key={item.id} className="Announcement-card">
                <h3>{item.topic}</h3>
                 <p>Room: {item.id}</p>
                 <h3>{item.student}</h3>
