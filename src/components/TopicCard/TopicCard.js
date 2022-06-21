@@ -24,7 +24,7 @@ return(
  {topicCard.map(function(item,index) { return(
       <div >
     <div className='topic--categories'>
-    <img className="img" src={item.src}/>
+    <img className="img" src={item.src} alt={item.topicName}/>
     <h3>{item.topicName}</h3>
     <StudentInput value = {index} />
     <Volunteer/>  

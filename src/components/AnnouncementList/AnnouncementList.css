@@ -1,7 +1,9 @@
 .Container-card{
     display: flex;
     margin: 15px;
-    padding: 5px;
+    margin-left: 68px;
+    margin-right: 68px;
+    padding: 15px;
     background-color:#3A3A3C;
     height: 130px ;
     border-radius: 8px;

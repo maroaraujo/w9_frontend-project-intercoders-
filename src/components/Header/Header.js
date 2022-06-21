@@ -5,7 +5,7 @@ function Header() {
 
     return (
         <div className="Header">
-            <h1> Code Clubs</h1>
+            <h1>[..., Code Clubs Dashboard ]</h1>
 
         </div>
     )

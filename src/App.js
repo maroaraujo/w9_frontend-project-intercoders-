@@ -4,13 +4,14 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Announcement from "./components/Announcement/Announcement";
 import Categories from "./components/Categories/Categories";
-
+import puzzle from "./img/puzzle.png";
 
 function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header className="header"/>
+      <img className="puzzle" src={puzzle} alt="puzzle" ></img>
       <Announcement/>
       <Categories/>
     </div>

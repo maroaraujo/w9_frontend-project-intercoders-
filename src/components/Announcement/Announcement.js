@@ -6,7 +6,7 @@ function Announcement({topic}) {
     return(
         <div className="Main--container">
            <h2>
-                Announcements:
+                ANNOUNCEMENTS
             </h2>
           <AnnouncementList/>
         </div>
