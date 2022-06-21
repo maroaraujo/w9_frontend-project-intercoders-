@@ -1,10 +1,17 @@
 import React from 'react';
 import "./CategoriesList.css";
+import javascript from "../../img/javascript-logo.png"
 
 function CategoriesList () {
     return (<div className = "CategoriesList--container">
+    <div className='topic--categories'>
+        <img src={javascript}/>
+        <h3>JavaScript</h3>
+    </div>
+    <h4>Room 1</h4>
+    <div className='inputs'>
     <div className='input-student'>
-    <input type="text" placeholder="Student's name"></input>
+        <input type="text" placeholder="Student's name"></input>
     <button type= "submit" >+</button>
     <li>Maria</li>
     </div>
@@ -18,6 +25,7 @@ function CategoriesList () {
         <option value= "friday"> Friday </option>
     </select>
     <button type= "submit" >Submit</button>
+    </div>
     </div>
     </div>
     )

@@ -26,7 +26,7 @@ return(
              <div className="Announcement-card">
                <h3>{item.topic}</h3>
                 <p>Room: {item.id}</p>
-                <p>{item.student}</p>
+                <h3>{item.student}</h3>
                 <p>{`${item.date} ${item.time}`}</p>
                 </div>)})}      
              </div>
