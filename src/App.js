@@ -1,6 +1,6 @@
 import "./App.css";
-import React, { useState } from "react";
-import Axios from "axios";
+//import React, { useState } from "react";
+//import Axios from "axios";
 import Header from "./components/Header/Header";
 import Announcement from "./components/Announcement/Announcement";
 import Categories from "./components/Categories/Categories";

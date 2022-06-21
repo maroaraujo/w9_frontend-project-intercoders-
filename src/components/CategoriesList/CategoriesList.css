@@ -10,23 +10,30 @@ text-align: center;
 }
 .inputs{
     display:flex;
-
-
+    text-align: center;
+}
+.room{
+display: flex;
+flex-direction: column;
+vertical-align: top;
 }
 .topic--categories{
 padding: 5px;
 align-self: center;
 }
+
 .input-student{
+    vertical-align: top;
     text-align: left;
     margin:10px;
-    align-self: center;
+    
     
 }
 
 .volunteer{
+    vertical-align: top;
     display: flex;
     flex-direction: column;
-    align-self: center;
+    padding-top:11px;
 }
 
