@@ -1,14 +1,13 @@
-.CategoriesList--container{
-display: flex;
-flex-direction: row;
-border-radius: 8px;
-text-align: center;
-justify-content: space-evenly;
-}
-.inputs{
-    display:flex;
+
+.CategoriesList--container {
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
     text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
 }
+
 .room{
 display: flex;
 flex-direction: column;
@@ -21,17 +20,16 @@ padding: 5px;
 
 .input-student{
     vertical-align: top;
-    text-align: left;
-    margin:10px;
-    
-    
+    text-align: left; 
+    padding: 10px; 
 }
 
 .volunteer{
     vertical-align: top;
     display: flex;
     flex-direction: column;
-    padding-top:11px;
+    padding-top:20px;
+    padding: 10px;
 }
 
 .deleteButton{

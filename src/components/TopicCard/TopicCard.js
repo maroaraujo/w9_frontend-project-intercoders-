@@ -22,12 +22,14 @@ const topicCard=[
 return(
   <div className="card--organizer">
  {topicCard.map(function(item,index) { return(
-      <div >
+      <div>
     <div className='topic--categories'>
     <img className="img" src={item.src} alt={item.topicName}/>
     <h3>{item.topicName}</h3>
+    <div className="inputs">
     <StudentInput value = {index} />
     <Volunteer/>  
+    </div>
     </div>
     </div>
     )})}
