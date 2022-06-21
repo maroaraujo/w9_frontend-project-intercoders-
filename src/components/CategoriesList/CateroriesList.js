@@ -2,10 +2,17 @@ import React from 'react';
 import {useState} from 'react'
 import "./CategoriesList.css";
 import javascript from "../../img/javascript-logo.png"
+import Volunteer from '../Volunteer/Volunter';
 
 function CategoriesList () {
     const [text,setText]=useState('');
     const [students, setStudent] = useState([]);
+
+    // function deleteStudent(e){
+    // e.preventDefault()
+    // const deletedStudents = ([...students.slice(students.id,students.id),...students.slice(students.id+1)])
+    // console.log(deletedStudents)
+    // } 
 
     function handleChange (e) {
     setText(e.target.value)
@@ -30,17 +37,7 @@ function CategoriesList () {
     <button type= "submit" onClick={handleClick}>+</button>
      {students.map(function(students){return <li key={students.id}>{students.studentName} <button key={students.id} className='deleteButton'> X</button></li> })}
     </div>
-    <div className='volunteer'>
-    <input type="text" placeholder="Volunteer's name"></input>
-    <select name="day">
-        <option value= "available">Available Date: </option>
-        <option value= "monday"> Monday </option>
-        <option value= "tuesday"> Tuesday </option>
-        <option value= "thursday"> Thursday </option>
-        <option value= "friday"> Friday </option>
-    </select>
-    <button type= "submit" >Submit</button>
-    </div>
+    <Volunteer/>
     </div>
     )
 }
