@@ -27,8 +27,8 @@ return(
     <img className="img" src={item.src} alt={item.topicName}/>
     <h3>{item.topicName}</h3>
     <div className="inputs">
-    <StudentInput value = {index} />
-    <Volunteer/>  
+    <StudentInput value = {item.topicName.toLowerCase()} />
+    <Volunteer value={item.topicName.toLowerCase()}/>  
     </div>
     </div>
     </div>

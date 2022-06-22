@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Volunteer () {
+function Volunteer (props) {
 const[nameVolunteer, setNameVolunteer]=useState("");
 const[date1,setDate]=useState("")
 const [volunteer,setVolunteer] = useState([]);
@@ -14,8 +14,8 @@ setDate(e.target.value)
 }
 
 function handleSubmit(){
-setVolunteer([...volunteer,{volunteerName:nameVolunteer, id:volunteer.length+1,date:date1}])}
-
+setVolunteer([...volunteer,{volunteerName:nameVolunteer.toLowerCase(), id:volunteer.length+1,date:date1,keyCourse:props.value}])}
+console.log(volunteer)
 return(
 <div className='volunteer'>
     <input type="text" onChange={handleName} placeholder="Volunteer's name"></input>
