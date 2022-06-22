@@ -53,7 +53,7 @@ function StudentInput(props) {
       </button>
       <ul>
         {!seeMore
-          ? students.slice(0, 3).map(function (students) {
+          ? students.slice(0, 2).map(function (students) {
               return (
                 <li key={students.id}>
                   •{students.studentName}{" "}
@@ -75,7 +75,7 @@ function StudentInput(props) {
                 </li>
               );
             })}
-        {students.length > 4 && (
+        {students.length > 2 && (
           <button className="addvolunteer" onClick={() => setSeeMore(true)}>See more</button>
         )}
       </ul>
