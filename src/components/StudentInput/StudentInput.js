@@ -13,7 +13,7 @@ function StudentInput(props) {
     // console.log(text)
   }
   // To send name of students to the database
-  function postStudent() {
+  async function postStudent() {
     console.log("Inside Axios");
     Axios.post("http://localhost:3001/waitinglist", {
       studentname: students[students.length - 1].studentName,
