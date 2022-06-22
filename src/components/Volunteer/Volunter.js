@@ -14,8 +14,9 @@ setDate(e.target.value)
 }
 
 function handleSubmit(){
+alert("Form sent, Thanks for your help")
 setVolunteer([...volunteer,{volunteerName:nameVolunteer.toLowerCase(), id:volunteer.length+1,date:date1,keyCourse:props.value}])}
-console.log(volunteer)
+// console.log(volunteer)
 return(
 <div className='volunteer'>
     <h4>Volunteers to Help</h4>
