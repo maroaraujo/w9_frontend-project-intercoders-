@@ -13,7 +13,7 @@ function StudentInput(props) {
 
     function handleClick(e){
     e.preventDefault()
-    setStudent([...students,{studentName:text.toLowerCase(), id:students.length+1,key:props.value}])
+    setStudent([...students,{studentName:text.toLowerCase(), id:students.length+1,keyCourse:props.value}])
     }
     console.log(students)
 
