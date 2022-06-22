@@ -10,12 +10,37 @@ flex: 1 1 600px;
 
 }
 .topic--categories{
+    display:flex;
 margin: 5px;
 background-color:#3A3A3C  ;
 border-radius: 10px;
+padding: 40px 0px 20px ;
 }
 .img{
 height: 60px;
 width: 60px;
 }
 
+.inputs{
+    background-color: red;
+display: flex;
+align-items: start;
+}
+.roomnumber{
+    position: relative;
+    top: -40px;
+    left: 60px;
+}
+
+ul>li{ 
+    
+    list-style: none;
+    background-color: yellow;
+
+}
+
+ul{
+    background-color: red;
+    margin:0;
+    padding: 0;
+}

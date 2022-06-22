@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -13,23 +13,20 @@ display: flex;
 flex-direction: column;
 vertical-align: top;
 }
-.topic--categories{
+/* .topic--categories{
 justify-content: space-between;
 padding: 5px;
-}
+} */
 
 .input-student{
-    vertical-align: top;
-    text-align: left; 
-    padding: 10px; 
-}
+    
+} 
 
 .volunteer{
     vertical-align: top;
     display: flex;
     flex-direction: column;
-    padding-top:20px;
-    padding: 10px;
+    
 }
 
 .deleteButton{
