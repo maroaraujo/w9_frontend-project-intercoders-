@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function StudentInput(props) {
+  const [more,setMore] =useState('More')
   /*const [studentCourse, setStudentCourse] = useState([])
 
     // To send name of students to the database
@@ -40,7 +41,7 @@ function StudentInput(props) {
     ]);
   }
   console.log(students);
-
+  console.log(more)
   return (
     <div className="input-student">
       <input
@@ -76,7 +77,7 @@ function StudentInput(props) {
               );
             })}
         {students.length > 2 && (
-          <button className="addvolunteer" onClick={() => setSeeMore(true)}>See more</button>
+          <button className="addvolunteer" onClick={() => { if (seeMore=== true){setSeeMore(false); setMore('More') } else setSeeMore(true); setMore('Less')} }> See {more}</button>
         )}
       </ul>
     </div>
