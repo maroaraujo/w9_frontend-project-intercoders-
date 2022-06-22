@@ -1,46 +1,71 @@
-.card--organizer{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-align-items: center;
-width: 100vw;
-}
-.card--organizer>*{
-flex: 1 1 600px;
-
-}
-.topic--categories{
-    display:flex;
-margin: 5px;
-background-color:#3A3A3C  ;
-border-radius: 10px;
-padding: 40px 0px 20px ;
-}
-.img{
-height: 60px;
-width: 60px;
+.card--organizer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100vw;
 }
 
-.inputs{
-    background-color: red;
-display: flex;
-align-items: start;
+.card--organizer>* {
+    flex: 1 1 600px;
+
 }
-.roomnumber{
+
+.image-course {
+    margin-left: 30px;
+    width: 90px;
+    text-align: center;
+}
+
+.topic--categories {
+    display: flex;
+    margin: 5px;
+    background-color: #3A3A3C;
+    border-radius: 10px;
+    padding: 40px 0px 20px;
+}
+
+.img {
+    height: 60px;
+    width: 70px;
+
+}
+
+.inputs {
+
+    display: flex;
+    align-items: start;
+}
+
+.roomnumber {
     position: relative;
     top: -40px;
-    left: 60px;
+    left: 55px;
 }
 
-ul>li{ 
-    
+ul>li {
+
     list-style: none;
     background-color: yellow;
 
 }
 
-ul{
+ul {
     background-color: red;
-    margin:0;
+    margin: 0;
     padding: 0;
+}
+.addstudent{
+    background-color: #3A3A3C;
+    color: white;
+    border-color: grey;
+    border-radius: 8px;
+    
+    
+}
+.addvolunteer{
+    background-color: #3A3A3C;
+    color: white;
+    border-color: grey;
+    border-radius: 8px;
 }

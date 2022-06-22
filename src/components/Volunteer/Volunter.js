@@ -18,6 +18,7 @@ setVolunteer([...volunteer,{volunteerName:nameVolunteer.toLowerCase(), id:volunt
 console.log(volunteer)
 return(
 <div className='volunteer'>
+    <h4>Volunteers to Help</h4>
     <input type="text" onChange={handleName} placeholder="Volunteer's name"></input>
     <select id="day" onChange={handleDate}>
         <option value= "available">Available Date: </option>
@@ -26,7 +27,7 @@ return(
         <option value= "thursday"> Thursday </option>
         <option value= "friday"> Friday </option>
     </select>
-    <button type= "click" onClick={handleSubmit}>Submit</button>
+    <button className="addvolunteer" type= "click" onClick={handleSubmit}>Submit</button>
     </div>
 
 )

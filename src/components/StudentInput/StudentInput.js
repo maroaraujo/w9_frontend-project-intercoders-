@@ -48,7 +48,7 @@ function StudentInput(props) {
         type="text"
         placeholder="Student's name"
       ></input>
-      <button type="submit" onClick={handleClick}>
+      <button className="addstudent" type="submit" onClick={handleClick}>
         +
       </button>
       <ul>

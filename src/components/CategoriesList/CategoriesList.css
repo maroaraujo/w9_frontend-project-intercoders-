@@ -19,16 +19,21 @@ padding: 5px;
 } */
 
 .input-student{
-    
+    vertical-align: top;
+    display: flex;
+    flex-direction: row; 
+    gap: 10px; 
 } 
 
 .volunteer{
     vertical-align: top;
     display: flex;
     flex-direction: column;
-    
+    gap:5px;
 }
-
+.volunteer>h4{
+    margin: 0;
+}
 .deleteButton{
 background-color: #3A3A3C;
 color: antiquewhite;
