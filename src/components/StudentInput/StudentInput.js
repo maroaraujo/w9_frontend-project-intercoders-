@@ -1,25 +1,9 @@
 import React from "react";
-import { useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from "react";
+import Axios from "axios";
 
 function StudentInput(props) {
-  const [more,setMore] =useState('More')
-  /*const [studentCourse, setStudentCourse] = useState([])
-
-    // To send name of students to the database
-      function postStudents() {
-        console.log("Inside Axios");
-        Axios.post("http://localhost:3001/waitinglist", {}).then((response) => {
-          console.log(response);
-          if (response.data.payload.length > 0) {
-            console.log("Hello, " + response.data.payload[0].username);
-            setStudentCourse("Hello, " + response.data.payload[0].username);
-          } else {
-            console.log("User is not found");
-            setStudentCourse("User is not found");
-          }
-        });
-      }*/
+  const [more, setMore] = useState('More')
   const [text, setText] = useState("");
   const [students, setStudent] = useState([]);
   const [seeMore, setSeeMore] = useState(false);
@@ -28,20 +12,48 @@ function StudentInput(props) {
     setText(e.target.value);
     // console.log(text)
   }
+  // To send name of students to the database
+  function postStudent() {
+    console.log("Inside Axios");
+    Axios.post("http://localhost:3001/waitinglist", {
+      studentname: students[students.length - 1].studentName,
+      keycourse: students[students.length - 1].keyCourse
+    })
+      .then((response) => {
+        console.log(response);
+      })
+    console.log(students[students.length - 1].studentName);;
+  }
+  useEffect(() => {
+    if (students.length !== 0) {
+      postStudent();
+    }
+    console.log(students);
+  }, [students])
 
-  function handleClick(e) {
+  function getStudent() {
+    console.log("Inside Axios");
+    Axios.get("http://localhost:3001/waitinglist")
+    .then((response) => {
+      setStudent([...response.data.payload]);
+      console.log(response);
+    })
+  }
+  useEffect(()=>{
+    getStudent()
+  },[])
+
+function handleClick(e) {
     e.preventDefault();
-    setStudent([
-      ...students,
+    setStudent((prev)=>[
+      ...prev,
       {
         studentName: text.toLowerCase(),
-        id: students.length + 1,
+        id: prev.length + 1,
         keyCourse: props.value,
       },
-    ]);
+    ])
   }
-  console.log(students);
-  console.log(more)
   return (
     <div className="input-student">
       <input
@@ -55,29 +67,29 @@ function StudentInput(props) {
       <ul>
         {!seeMore
           ? students.slice(0, 2).map(function (students) {
-              return (
-                <li key={students.id}>
-                  •{students.studentName}{" "}
-                  <button key={students.id} className="deleteButton">
-                    {" "}
-                    X
-                  </button>
-                </li>
-              );
-            })
+            return (
+              <li key={students.id}>
+                •{students.studentName}{" "}
+                <button key={students.id} className="deleteButton">
+                  {" "}
+                  X
+                </button>
+              </li>
+            );
+          })
           : students.map(function (students) {
-              return (
-                <li key={students.id}>
-                  •{students.studentName}{" "}
-                  <button key={students.id} className="deleteButton">
-                    {" "}
-                    X
-                  </button>
-                </li>
-              );
-            })}
+            return (
+              <li key={students.id}>
+                •{students.studentName}{" "}
+                <button key={students.id} className="deleteButton">
+                  {" "}
+                  X
+                </button>
+              </li>
+            );
+          })}
         {students.length > 2 && (
-          <button className="addvolunteer" onClick={() => { if (seeMore=== true){setSeeMore(false); setMore('More') } else if(seeMore===false) {setSeeMore(true); setMore('Less')}} }> See {more}</button>
+          <button className="addvolunteer" onClick={() => { if (seeMore === true) { setSeeMore(false); setMore('More') } else if (seeMore === false) { setSeeMore(true); setMore('Less') } }}> See {more}</button>
         )}
       </ul>
     </div>
