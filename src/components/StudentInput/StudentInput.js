@@ -76,7 +76,7 @@ function StudentInput(props) {
               );
             })}
         {students.length > 4 && (
-          <button onClick={() => setSeeMore(true)}>See more</button>
+          <button className="addvolunteer" onClick={() => setSeeMore(true)}>See more</button>
         )}
       </ul>
     </div>
