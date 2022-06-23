@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import Axios from "axios";
 
-function Volunteer(props) {
+function Volunteer(props,{setkeycourses}) {
+  
   const [nameVolunteer, setNameVolunteer] = useState("");
   const [date1, setDate] = useState("");
   const [volunteer, setVolunteer] = useState([]);
@@ -32,8 +33,8 @@ function Volunteer(props) {
         keyCourse: props.value,
       },
     ]);
-    
-    Axios.post("http://localhost:3001/announcement", {
+    // setkeycourses(volunteer);
+    Axios.post("https://intercoders.herokuapp.com/announcement", {
       id: volunteer.length + 1,
       keycourse: props.value,
       volunteername: nameVolunteer.toLowerCase(),

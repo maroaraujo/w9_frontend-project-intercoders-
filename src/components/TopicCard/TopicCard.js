@@ -7,7 +7,7 @@ import Volunteer from "../Volunteer/Volunter";
 import StudentInput from "../StudentInput/StudentInput";
 import "./TopicCard.css";
 
-function TopicCard() {
+function TopicCard({setkeycourses}) {
   const topicCard = [
     { topicName: "JavaScript", src: javascript },
     { topicName: "React", src: reactlogo },
@@ -28,7 +28,7 @@ function TopicCard() {
               <p className="roomnumber">Room {index+1}</p>
               <div className="inputs">
                 <StudentInput value={item.topicName.toLowerCase()} />
-                <Volunteer value={item.topicName.toLowerCase()} />
+                <Volunteer setkeycourses={setkeycourses} value={item.topicName.toLowerCase()} />
               </div>
             </div>
           

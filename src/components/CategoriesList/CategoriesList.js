@@ -2,10 +2,10 @@ import React from 'react';
 import "./CategoriesList.css";
 import TopicCard from '../TopicCard/TopicCard';
 
-function CategoriesList () {
+function CategoriesList ({setkeycourses}) {
     return (
     <div className = "CategoriesList--container">
-    <TopicCard/>
+    <TopicCard setkeycourses={setkeycourses}/>
     </div>
     )
 }

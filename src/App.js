@@ -1,19 +1,20 @@
 import "./App.css";
-//import React, { useState } from "react";
+import React, { useState } from "react";
 //import Axios from "axios";
 import Header from "./components/Header/Header";
 import Announcement from "./components/Announcement/Announcement";
 import Categories from "./components/Categories/Categories";
 import puzzle from "./img/puzzle.png";
 
-function App(props) {
-console.log("props do app", props)
+function App() {
+  const [keycourses, setkeycourses] = useState([])
+
   return (
     <div className="App">
       <Header className="header"/>
       <img className="puzzle" src={puzzle} alt="puzzle" ></img>
       <Announcement/>
-      <Categories/>
+      <Categories setkeycourses={setkeycourses}/>
     </div>
   );
 }
