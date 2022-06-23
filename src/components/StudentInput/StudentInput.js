@@ -93,7 +93,7 @@ function deleteStudent(deletedId){
         {!seeMore && students
           ? students
               .filter(function (students) {
-                console.log(students.coursename);
+                //console.log(students.coursename)};
                 if (students.coursename === props.value) {
                   return students;
                 }
