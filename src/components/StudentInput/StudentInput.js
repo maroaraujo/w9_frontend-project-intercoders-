@@ -5,9 +5,10 @@ import Axios from "axios";
 function StudentInput(props) {
   const [more, setMore] = useState("More");
   const [text, setText] = useState("");
-  const [students, setStudent] = useState();
+  const [students, setStudent] = useState([]);
   const [seeMore, setSeeMore] = useState(false);
 
+  console.log("this is the students",students)
   function handleChange(e) {
     setText(e.target.value);
     // console.log(text)
@@ -34,7 +35,7 @@ function StudentInput(props) {
       {
         studentname: text.toLowerCase(),
         id: prev.length + 1,
-        keyCourse: props.value,
+        keycourse: props.value,
       },
     ]);
     Axios.post("https://intercoders.herokuapp.com/waitinglist", {
@@ -45,6 +46,7 @@ function StudentInput(props) {
     }).then((response) => {
       console.log(response);
     });
+    
   }
 
 function deleteStudent(deletedId){
@@ -85,9 +87,6 @@ function deleteStudent(deletedId){
     });
   }
   
-
-
-
   return (
     <div className="input-student">
       <input
