@@ -6,8 +6,8 @@ import Announcement from "./components/Announcement/Announcement";
 import Categories from "./components/Categories/Categories";
 import puzzle from "./img/puzzle.png";
 
-function App() {
-
+function App(props) {
+console.log("props do app", props)
   return (
     <div className="App">
       <Header className="header"/>

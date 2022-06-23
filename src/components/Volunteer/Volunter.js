@@ -14,6 +14,10 @@ function Volunteer(props) {
     setDate(e.target.value);
   }
 
+// function volunteerData(){
+//     return volunteer;
+// }
+
   async function handleClick(e) {
     alert("Form sent, Thanks for your help");
     //setVolunteer([...volunteer,{volunteername:nameVolunteer.toLowerCase(), id:volunteer.length+1,date:date1,keyCourse:props.value}])}
@@ -56,7 +60,7 @@ function Volunteer(props) {
         <option value="thursday"> Thursday </option>
         <option value="friday"> Friday </option>
       </select>
-      <button className="addvolunteer" type="click" onClick={(e)=>{handleClick(e)}}>
+      <button className="addvolunteer" type="click" value={volunteer} onClick={(e)=>{handleClick(e)}}>
         Submit
       </button>
     </div>
@@ -64,3 +68,5 @@ function Volunteer(props) {
 }
 
 export default Volunteer;
+
+//export {volunteerData}

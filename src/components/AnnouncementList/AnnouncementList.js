@@ -2,8 +2,9 @@ import React from "react";
 import "./AnnouncementList.css"
 import Axios from "axios";
 import { useState } from "react";
+import {volunteerData} from "../Volunteer/Volunter"
 
-function AnnouncementList() {
+function AnnouncementList({volunteerData}) {
 //const [keycourses, setkeycourses] = useState([keycourse])
 
 let keycourse = [{
@@ -27,7 +28,7 @@ time:"17:30"}]
 //     setkeycourses(response.data.payload);
 //   });
 // }
-
+console.log("this is the props", volunteerData);
 
 
 return(
@@ -39,7 +40,8 @@ return(
                 <p>Room: {item.id}</p>
                 <h3>{item.volunteerName}</h3>
                 <p>{`${item.date} ${item.time}`}</p>
-                </div>)})}      
+                
+                </div>)})}   
              </div>
 );
     
