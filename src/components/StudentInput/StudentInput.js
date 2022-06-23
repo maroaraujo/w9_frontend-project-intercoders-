@@ -13,9 +13,10 @@ function StudentInput(props) {
     // console.log(text)
   }
 
-  function getStudent() {
+  async function getStudent() {
     console.log("Inside Axios");
-    Axios.get("http://localhost:3001/waitinglist").then((response) => {
+    Axios.get("https://intercoders.herokuapp.com/waitinglist").then((response) => {
+      console.log(response.data.payload);
       setStudent(response.data.payload);
     });
   }
@@ -31,22 +32,23 @@ function StudentInput(props) {
     setStudent((prev) => [
       ...prev,
       {
-        name: text.toLowerCase(),
+        studentname: text.toLowerCase(),
         id: prev.length + 1,
         keyCourse: props.value,
       },
     ]);
-    Axios.post("http://localhost:3001/waitinglist", {
+    Axios.post("https://intercoders.herokuapp.com/waitinglist", {
       //studentname: students[students.length - 1].name,
-      studentname: text.toLowerCase(),
       //keycourse: students[students.length - 1].keyCourse
       keycourse: props.value,
+      studentname: text.toLowerCase(),
     }).then((response) => {
       console.log(response);
     });
   }
 
 function deleteStudent(deletedId){
+  console.log("delete function run")
     let newArrayStudent = students.filter(function(thisStudent){
       console.log(thisStudent.id)
       console.log(deletedId)
@@ -66,16 +68,23 @@ function deleteStudent(deletedId){
     //console.log(newArrayStudent); 
     setStudent(newArrayStudent);
     //console.log(students.name)
+    let authorizationToken = "5255e995-a4de-4c4f-b063-c40a351f1f25";
     console.log(props.value)
-    Axios.delete("http://localhost:3001/waitinglist", { data :{
+    console.log("passing here")
+    Axios.delete("https://intercoders.herokuapp.com/waitinglist", { 
+      headers: {
+      Authorization: authorizationToken
+    }
+    ,data :{
       //studentname: students[students.length - 1].name,
-      studentname: deletedStudent[0].name,
+      studentname: deletedStudent[0].studentname,
       //keycourse: students[students.length - 1].keyCourse
       keycourse: props.value,}
     }).then((response) => {
       console.log("response from delete request", response);
     });
   }
+  
 
 
 
@@ -92,17 +101,17 @@ function deleteStudent(deletedId){
       <ul>
         {!seeMore && students
           ? students
-              .filter(function (students) {
-                //console.log(students.coursename)};
-                if (students.coursename === props.value) {
+              .filter(function(students) {
+                //console.log(students.keycourse)};
+                if (students.keycourse === props.value) {
                   return students;
                 }
               })
               .map(function (students) {
                 return (
                   <li key={students.id} id={students.id}>
-                    •{students && students.name}{" "}
-                    <button className="deleteButton" key={students.id} id={students.id} onClick={()=>deleteStudent(students.id)}>
+                    •{students && students.studentname}{" "}
+                    <button className="deleteButton" key={students.id} id={students.id} onClick={()=>deleteStudent(students.id)} >
                       {" "}
                       X
                     </button>
@@ -113,16 +122,16 @@ function deleteStudent(deletedId){
           : students &&
             students
               .filter(function (students) {
-                console.log(students.coursename);
-                if (students.coursename === props.value) {
+                console.log(students.keycourse);
+                if (students.keycourse === props.value) {
                   return students;
                 }
               })
               .map(function (students) {
                 return (
                   <li key={students.id}>
-                    •{students.name}{" "}
-                    <button key={students.id} className="deleteButton">
+                    •{students.studentname}{" "}
+                    <button key={students.id} className="deleteButton" onClick={()=>deleteStudent(students.id)}>
                       {" "}
                       X
                     </button>
@@ -186,4 +195,11 @@ export default StudentInput;
                 </button> 
               </li>
             );
+
+
+
+
+
+
+            onClick={()=>deleteStudent(students.id)}
             */
