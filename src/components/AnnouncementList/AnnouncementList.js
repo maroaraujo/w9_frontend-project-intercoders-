@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AnnouncementList.css"
 import Axios from "axios";
 import { useState } from "react";
-import {volunteerData} from "../Volunteer/Volunter"
+//import {volunteerData} from "../Volunteer/Volunter"
 
-function AnnouncementList({volunteerData}) {
+function AnnouncementList() {
 //const [keycourses, setkeycourses] = useState([keycourse])
+async function getVolunteers() {
+  let response = await fetch ("https://intercoders.herokuapp.com/announcement");
+  let data = await response.json()
+  console.log("receving data from volunteers", data.payload);
+}
+useEffect(()=> {
+  getVolunteers();
+},[])
 
 let keycourse = [{
 id:"1",
@@ -28,7 +36,7 @@ time:"17:30"}]
 //     setkeycourses(response.data.payload);
 //   });
 // }
-console.log("this is the props", volunteerData);
+//console.log("this is the props", volunteerData);
 
 
 return(
