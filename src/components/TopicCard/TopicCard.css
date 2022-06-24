@@ -32,7 +32,7 @@
 }
 
 .inputs {
-
+margin-left: 30px;;
     display: flex;
     align-items: start;
     gap: 15px; 
