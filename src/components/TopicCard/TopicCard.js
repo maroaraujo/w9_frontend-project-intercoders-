@@ -5,6 +5,8 @@ import sql from "../../img/postgresql-logo.png";
 import node from "../../img/node.png";
 import Volunteer from "../Volunteer/Volunter";
 import StudentInput from "../StudentInput/StudentInput";
+import css from "../../img/css.png";
+import jest from "../../img/jest.png";
 import "./TopicCard.css";
 
 function TopicCard({setkeycourses}) {
@@ -13,8 +15,10 @@ function TopicCard({setkeycourses}) {
     { topicName: "React", src: reactlogo },
     { topicName: "SQL", src: sql },
     { topicName: "Node.JS", src: node },
+    { topicName: "CSS", src: css },
+    { topicName: "Jest", src: jest },
   ];
-
+//CSS AND JEST
   return (
     <div className="card--organizer">
       {topicCard.map(function (item, index) {
