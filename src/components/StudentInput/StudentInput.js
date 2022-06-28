@@ -11,7 +11,6 @@ function StudentInput(props) {
   console.log("this is the students",students)
   function handleChange(e) {
     setText(e.target.value);
-    // console.log(text)
   }
 
   async function getStudent() {
@@ -24,10 +23,7 @@ function StudentInput(props) {
   useEffect(() => {
     getStudent();
   }, []);
-  if (students !== undefined) {
-    console.log(students);
-  }
-
+  
   async function handleClick(e) {
     e.preventDefault();
     setStudent((prev) => [
@@ -39,8 +35,6 @@ function StudentInput(props) {
       },
     ]);
     Axios.post("https://intercoders.herokuapp.com/waitinglist", {
-      //studentname: students[students.length - 1].name,
-      //keycourse: students[students.length - 1].keyCourse
       keycourse: props.value,
       studentname: text.toLowerCase(),
     }).then((response) => {
@@ -50,7 +44,7 @@ function StudentInput(props) {
   }
 
 function deleteStudent(deletedId){
-  console.log("delete function run")
+  console.log("delete function is running")
     let newArrayStudent = students.filter(function(thisStudent){
       console.log(thisStudent.id)
       console.log(deletedId)
@@ -67,20 +61,12 @@ function deleteStudent(deletedId){
       }
     })
     console.log("this is the deleted student", deletedStudent[0].name)
-    //console.log(newArrayStudent); 
     setStudent(newArrayStudent);
-    //console.log(students.name)
-    let authorizationToken = "5255e995-a4de-4c4f-b063-c40a351f1f25";
     console.log(props.value)
     console.log("passing here")
     Axios.delete("https://intercoders.herokuapp.com/waitinglist", { 
-      headers: {
-      Authorization: authorizationToken
-    }
-    ,data :{
-      //studentname: students[students.length - 1].name,
+      data :{
       studentname: deletedStudent[0].studentname,
-      //keycourse: students[students.length - 1].keyCourse
       keycourse: props.value,}
     }).then((response) => {
       console.log("response from delete request", response);
@@ -101,7 +87,6 @@ function deleteStudent(deletedId){
         {!seeMore && students
           ? students
               .filter(function(students) {
-                //console.log(students.keycourse)};
                 if (students.keycourse === props.value) {
                   return students;
                 }
@@ -161,44 +146,3 @@ function deleteStudent(deletedId){
 
 export default StudentInput;
 
-// To send name of students to the database
-//   function postStudent() {
-//   console.log("Inside Axios");
-//   Axios.post("http://localhost:3001/waitinglist", {
-//     studentname: students[students.length - 1].studentName,
-//     keycourse: students[students.length - 1].keyCourse
-//   })
-//     .then((response) => {
-//       console.log(response);
-//     })
-//   console.log(students[students.length - 1].studentName);;
-// }
-// useEffect(() => {
-//   if (students.length !== 0) {
-//     postStudent();
-//   }
-//   console.log(students);
-// }, [students])
-
-// {students.filter(students => students.includes(keyCourse)).map(filteredName => (
-//   <li>
-//     {filteredName}
-//   </li>
-
-/*return (
-              <li key={students.id}>
-               •{students && students.name}{" "}
-                <button key={students.id} className="deleteButton">
-                  {" "}
-                  X
-                </button> 
-              </li>
-            );
-
-
-
-
-
-
-            onClick={()=>deleteStudent(students.id)}
-            */

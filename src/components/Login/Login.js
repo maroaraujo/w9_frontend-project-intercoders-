@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Axios from "axios";
 
+/* we are not using this part, as we have not created a login and password page yet*/
 const Login = ({ onSubmit }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

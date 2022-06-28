@@ -1,10 +1,9 @@
 import React from "react";
 import './Announcement.css'
 import AnnouncementList from "../AnnouncementList/AnnouncementList";
-import Categories from "../Categories/Categories";
 
-function Announcement(props,{topic}) {
-    console.log("props de announcemnt", props)
+
+function Announcement() {
     return(
         <div className="Main--container">
            <h2>
@@ -12,9 +11,6 @@ function Announcement(props,{topic}) {
             </h2>
           <AnnouncementList/>
         </div>
+        )}
     
-    )
-    
-}
-
 export default Announcement;

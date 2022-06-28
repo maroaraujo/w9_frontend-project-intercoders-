@@ -18,7 +18,7 @@ function TopicCard({setkeycourses}) {
     { topicName: "CSS", src: css },
     { topicName: "Jest", src: jest },
   ];
-//CSS AND JEST
+
   return (
     <div className="card--organizer">
       {topicCard.map(function (item, index) {
@@ -29,13 +29,11 @@ function TopicCard({setkeycourses}) {
               <img className="img" src={item.src} alt={item.topicName} />
               <h3>{item.topicName}</h3>
               </div>
-              {/* <p className="roomnumber">Room {index+1}</p> */}
-              <div className="inputs">
+               <div className="inputs">
                 <StudentInput value={item.topicName.toLowerCase()} />
                 <Volunteer setkeycourses={setkeycourses} value={item.topicName.toLowerCase()} />
               </div>
             </div>
-          
         );
       })}
     </div>
