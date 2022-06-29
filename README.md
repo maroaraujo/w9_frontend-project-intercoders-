@@ -66,31 +66,12 @@ Start the server
 
 ## Demo
 
-https://vimeo.com/user68457418
+https://vimeo.com/725201751
 
 
 ## APP Screenshots
 
 ![App Screenshot](https://i.ibb.co/yhm8wLy/App-screeshot.png)
-
-## Tech Stack
-
-**Client:** React, HTML, CSS, Javascript
-
-**Server:** Node.js, Express, Axios, CORS, Heroku, 
-Postman API
-
-## How Technologies and libraries were used in this repository:
-
- - **React.js**: The main library we used for the front end application
- - **Node.js**: We used the Node.JS runtime environment for the backend
- - **Express**: We used Express framwework to build the Node web application
- - **Axios**: This library helped us to establish the communication between the frontend and backend
- - **CORS**: We used it to permit loading resources when the origin of the request was different than the destination.
- - **Heroku**: Heroku is hosting our PostgreSQL database and the API of our application.
- - **Postman API**: This tool was very useful to test the API's routes and the database
- - **Git and GitHub**: Git version control and GitHub branches were used to be able to separate the tasks and could work as a team on the same codebase. 
-
 
 ## Running Tests
 
@@ -100,7 +81,6 @@ To run tests, run the following command
   npm run test
 ```
  
-
 ## API Routes
 The APIs aim to adhere to RESTful best practices. Here are the routes currently implemented. The API is currently hosted on Heroku.    
 Live demo is available: https://intercoders.herokuapp.com/
@@ -120,6 +100,24 @@ Live demo is available: https://intercoders.herokuapp.com/
 | POST | /course | Create a new course category | {course}	| {success: boolean,   payload: string} |	
 | POST | /users/login | Login for users | {username, pqssword}	| {success: boolean, payload: [{id, username, course}]} |
 | POST | /users/register | Registering a new student | {username, password}	| {success: boolean, payload: [{id, username, course}]} |
+
+## Tech Stack
+
+**Client:** React, HTML, CSS, Javascript
+
+**Server:** Node.js, Express, Axios, CORS, Heroku, 
+Postman API
+
+## How Technologies and libraries were used in this repository:
+
+ - **React.js**: The main library we used for the front end application
+ - **Node.js**: We used the Node.JS runtime environment for the backend
+ - **Express**: We used Express framwework to build the Node web application
+ - **Axios**: This library helped us to establish the communication between the frontend and backend
+ - **CORS**: We used it to permit loading resources when the origin of the request was different than the destination.
+ - **Heroku**: Heroku is hosting our PostgreSQL database and the API of our application.
+ - **Postman API**: This tool was very useful to test the API's routes and the database
+ - **Git and GitHub**: Git version control and GitHub branches were used to be able to separate the tasks and could work as a team on the same codebase. 
 
 
 Available Documentation for Setting Up 
@@ -197,5 +195,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 
