@@ -5,16 +5,20 @@ import Header from "./components/Header/Header";
 import Announcement from "./components/Announcement/Announcement";
 import Categories from "./components/Categories/Categories";
 import puzzle from "./img/puzzle.png";
+import VolunteersContext from "./components/VolunteersContext/VolunteersContext";
 
 function App() {
-  const [keycourses, setkeycourses] = useState([])
+  //const [keycourses, setkeycourses] = useState([])
+  const [volunteers, setVolunteers] = useState([]);
 
   return (
     <div className="App">
+      <VolunteersContext.Provider value={[volunteers, setVolunteers]}>
       <Header className="header"/>
       <img className="puzzle" src={puzzle} alt="puzzle" ></img>
-      <Announcement/>
-      <Categories setkeycourses={setkeycourses}/>
+      <Announcement />
+      <Categories />
+      </VolunteersContext.Provider>
     </div>
   );
 }

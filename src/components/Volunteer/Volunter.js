@@ -1,12 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Axios from "axios";
+import VolunteersContext from "../VolunteersContext/VolunteersContext";
 
-function Volunteer(props) {
+function Volunteer({value}) {
   //Setting the useStates
   const [nameVolunteer, setNameVolunteer] = useState("");
   const [date1, setDate] = useState("");
-  const [volunteer, setVolunteer] = useState([]);
+  const [volunteers, setVolunteers] = useContext(VolunteersContext);
+  console.log("volunteer props")
 
   //Setting the name of the Volunteer to the imputted value
   function handleName(e) {
@@ -22,18 +24,19 @@ function Volunteer(props) {
   async function handleClick(e) {
     alert("Form sent, Thanks for your help");
     e.preventDefault();
-    setVolunteer([
-      ...volunteer,
+    setVolunteers([
+      ...volunteers,
       {
         volunteername: nameVolunteer.toLowerCase(),
-        id: volunteer.length + 1,
+        id: volunteers.length + 1,
         date: date1,
-        keyCourse: props.value,
+        keycourse: value,
+        time: "17:30",
       },
     ]);
     Axios.post("https://intercoders.herokuapp.com/announcement", {
-      id: volunteer.length + 1,
-      keycourse: props.value,
+      id: volunteers.length + 1,
+      keycourse: value,
       volunteername: nameVolunteer.toLowerCase(),
       date: date1,
       time: "17:30",
@@ -41,7 +44,7 @@ function Volunteer(props) {
       console.log(response);
     });
   }
-  console.log(volunteer);
+  console.log("this is the volunteer", volunteers);
 
   //Returning the column containing the volunteer's name, avaibility and the bubmit button
   return (
@@ -62,7 +65,7 @@ function Volunteer(props) {
       <button
         className="addvolunteer"
         type="click"
-        value={volunteer}
+        value={volunteers}
         onClick={(e) => {
           handleClick(e);
         }}

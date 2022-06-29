@@ -3,10 +3,10 @@ import "./CategoriesList.css";
 import TopicCard from "../TopicCard/TopicCard";
 
 //Rendering the container for the topic cards
-function CategoriesList({ setkeycourses }) {
+function CategoriesList() {
   return (
     <div className="CategoriesList--container">
-      <TopicCard setkeycourses={setkeycourses} />
+      <TopicCard />
     </div>
   );
 }
