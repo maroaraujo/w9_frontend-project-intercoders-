@@ -8,7 +8,6 @@ import puzzle from "./img/puzzle.png";
 import VolunteersContext from "./components/VolunteersContext/VolunteersContext";
 
 function App() {
-  //const [keycourses, setkeycourses] = useState([])
   const [volunteers, setVolunteers] = useState([]);
 
   return (
