@@ -1,6 +1,7 @@
+//Currently the login page is not in use, the fuction will be implemented in the next version
+
 import React, { useState } from "react";
 
-/* we are not using this part, as we have not created a login and password page yet*/
 const Login = ({ onSubmit }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

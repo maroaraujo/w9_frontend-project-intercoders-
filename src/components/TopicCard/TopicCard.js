@@ -9,7 +9,8 @@ import css from "../../img/css.png";
 import jest from "../../img/jest.png";
 import "./TopicCard.css";
 
-function TopicCard({setkeycourses}) {
+//Array of the topic to display on the site
+function TopicCard({ setkeycourses }) {
   const topicCard = [
     { topicName: "JavaScript", src: javascript },
     { topicName: "React", src: reactlogo },
@@ -19,21 +20,24 @@ function TopicCard({setkeycourses}) {
     { topicName: "Jest", src: jest },
   ];
 
+  //Rendering the topics on the site, including the waiting list and the volunteer imput fields
   return (
     <div className="card--organizer">
       {topicCard.map(function (item, index) {
         return (
-          
-            <div className="topic--categories">
+          <div className="topic--categories">
             <div className="image-course">
               <img className="img" src={item.src} alt={item.topicName} />
               <h3>{item.topicName}</h3>
-              </div>
-               <div className="inputs">
-                <StudentInput value={item.topicName.toLowerCase()} />
-                <Volunteer setkeycourses={setkeycourses} value={item.topicName.toLowerCase()} />
-              </div>
             </div>
+            <div className="inputs">
+              <StudentInput value={item.topicName.toLowerCase()} />
+              <Volunteer
+                setkeycourses={setkeycourses}
+                value={item.topicName.toLowerCase()}
+              />
+            </div>
+          </div>
         );
       })}
     </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Axios from "axios";
 
+//Declaring the useStates
 function StudentInput(props) {
   const [more, setMore] = useState("More");
   const [text, setText] = useState("");
@@ -9,10 +10,12 @@ function StudentInput(props) {
   const [seeMore, setSeeMore] = useState(false);
 
   console.log("this is the students", students);
+
+  //Setting the student's name to the imputted value
   function handleChange(e) {
     setText(e.target.value);
   }
-
+  //Send a GET request for the updated waitinglist
   async function getStudent() {
     console.log("Inside Axios");
     Axios.get("https://intercoders.herokuapp.com/waitinglist").then(
@@ -22,10 +25,13 @@ function StudentInput(props) {
       }
     );
   }
+
+  //Send a GET request for the waiting list when the page load at the first time
   useEffect(() => {
     getStudent();
   }, []);
 
+  //Set the student's name and send a POST request to the backend to update the waitinglist
   async function handleClick(e) {
     e.preventDefault();
     setStudent((prev) => [
@@ -44,6 +50,7 @@ function StudentInput(props) {
     });
   }
 
+  //Deleting a student from the waitinglist
   function deleteStudent(deletedId) {
     console.log("delete function is running");
     let newArrayStudent = students.filter(function (thisStudent) {
@@ -76,6 +83,7 @@ function StudentInput(props) {
     return;
   }
 
+  //Returning and rendering the waiting list, filtered by topics on the Category container
   return (
     <div className="input-student">
       <input
