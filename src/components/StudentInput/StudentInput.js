@@ -8,22 +8,24 @@ function StudentInput(props) {
   const [students, setStudent] = useState([]);
   const [seeMore, setSeeMore] = useState(false);
 
-  console.log("this is the students",students)
+  console.log("this is the students", students);
   function handleChange(e) {
     setText(e.target.value);
   }
 
   async function getStudent() {
     console.log("Inside Axios");
-    Axios.get("https://intercoders.herokuapp.com/waitinglist").then((response) => {
-      console.log(response.data.payload);
-      setStudent(response.data.payload);
-    });
+    Axios.get("https://intercoders.herokuapp.com/waitinglist").then(
+      (response) => {
+        console.log(response.data.payload);
+        setStudent(response.data.payload);
+      }
+    );
   }
   useEffect(() => {
     getStudent();
   }, []);
-  
+
   async function handleClick(e) {
     e.preventDefault();
     setStudent((prev) => [
@@ -40,39 +42,40 @@ function StudentInput(props) {
     }).then((response) => {
       console.log(response);
     });
-    
   }
 
-function deleteStudent(deletedId){
-  console.log("delete function is running")
-    let newArrayStudent = students.filter(function(thisStudent){
-      console.log(thisStudent.id)
-      console.log(deletedId)
-      if(thisStudent.id !== deletedId){
+  function deleteStudent(deletedId) {
+    console.log("delete function is running");
+    let newArrayStudent = students.filter(function (thisStudent) {
+      console.log(thisStudent.id);
+      console.log(deletedId);
+      if (thisStudent.id !== deletedId) {
         return thisStudent;
       }
     });
 
-    let deletedStudent = students.filter(function(delStudent){
-      console.log(delStudent.id)
-      console.log(deletedId)
-      if(delStudent.id === deletedId){
+    let deletedStudent = students.filter(function (delStudent) {
+      console.log(delStudent.id);
+      console.log(deletedId);
+      if (delStudent.id === deletedId) {
         return delStudent;
       }
-    })
-    console.log("this is the deleted student", deletedStudent[0].name)
+    });
+    console.log("this is the deleted student", deletedStudent[0].name);
     setStudent(newArrayStudent);
-    console.log(props.value)
-    console.log("passing here")
-    Axios.delete("https://intercoders.herokuapp.com/waitinglist", { 
-      data :{
-      studentname: deletedStudent[0].studentname,
-      keycourse: props.value,}
+    console.log(props.value);
+    console.log("passing here");
+    Axios.delete("https://intercoders.herokuapp.com/waitinglist", {
+      data: {
+        studentname: deletedStudent[0].studentname,
+        keycourse: props.value,
+      },
     }).then((response) => {
       console.log("response from delete request", response);
     });
+    return;
   }
-  
+
   return (
     <div className="input-student">
       <input
@@ -86,7 +89,7 @@ function deleteStudent(deletedId){
       <ul>
         {!seeMore && students
           ? students
-              .filter(function(students) {
+              .filter(function (students) {
                 if (students.keycourse === props.value) {
                   return students;
                 }
@@ -95,7 +98,12 @@ function deleteStudent(deletedId){
                 return (
                   <li key={students.id} id={students.id}>
                     •{students && students.studentname}{" "}
-                    <button className="deleteButton" key={students.id} id={students.id} onClick={()=>deleteStudent(students.id)} >
+                    <button
+                      className="deleteButton"
+                      key={students.id}
+                      id={students.id}
+                      onClick={() => deleteStudent(students.id)}
+                    >
                       {" "}
                       X
                     </button>
@@ -115,7 +123,11 @@ function deleteStudent(deletedId){
                 return (
                   <li key={students.id}>
                     •{students.studentname}{" "}
-                    <button key={students.id} className="deleteButton" onClick={()=>deleteStudent(students.id)}>
+                    <button
+                      key={students.id}
+                      className="deleteButton"
+                      onClick={() => deleteStudent(students.id)}
+                    >
                       {" "}
                       X
                     </button>
@@ -145,4 +157,3 @@ function deleteStudent(deletedId){
 }
 
 export default StudentInput;
-
