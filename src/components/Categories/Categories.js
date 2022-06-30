@@ -7,7 +7,7 @@ function Categories() {
   return (
     <div className="Categories--container">
       <h2>CATEGORIES</h2>
-      <CategoriesList />
+      <CategoriesList  />
     </div>
   );
 }

@@ -10,7 +10,7 @@ import jest from "../../img/jest.png";
 import "./TopicCard.css";
 
 //Array of the topic to display on the site
-function TopicCard({ setkeycourses }) {
+function TopicCard({ setVolunteer, volunteer }) {
   const topicCard = [
     { topicName: "JavaScript", src: javascript },
     { topicName: "React", src: reactlogo },
@@ -33,7 +33,7 @@ function TopicCard({ setkeycourses }) {
             <div className="inputs">
               <StudentInput value={item.topicName.toLowerCase()} />
               <Volunteer
-                setkeycourses={setkeycourses}
+                volunteer={volunteer} setVolunteer={setVolunteer}
                 value={item.topicName.toLowerCase()}
               />
             </div>
