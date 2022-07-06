@@ -48,6 +48,7 @@ function StudentInput(props) {
     }).then((response) => {
       console.log(response);
     });
+    setText('');
   }
 
   //Deleting a student from the waitinglist
@@ -90,6 +91,7 @@ function StudentInput(props) {
         onChange={handleChange}
         type="text"
         placeholder="Student's name"
+        value={text}
       ></input>
       <button className="addstudent" type="submit" onClick={handleClick}>
         +
