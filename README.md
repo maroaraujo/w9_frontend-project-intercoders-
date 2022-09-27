@@ -1,5 +1,7 @@
 # CODECLUB APP
 
+## Our [presentation](https://docs.google.com/presentation/d/e/2PACX-1vQMXCZZFrPdmcfA_C6Oev9Ybhn5jPIN3vRrybQOfVPdecBFxghL8Cr75x8pDYoKbGLU0-EOiSCSqJ-w/pub?start=false&loop=false&delayms=3000&slide=id.g134b0d010e1_0_827). 
+
 ## How the App Started
 
 The original idea was born after various discussions between four School of Code students came together to discuss and find solutions to the problems the students might be facing in their day-to-day life within an intense learning environment. 
